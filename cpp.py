@@ -4,7 +4,7 @@ demangle = lambda x : idc.demangle_name(x,0b1000)
 x = []
 
 def ext(n,fl):
-        idx = []
+    idx = []
     ret = ''
     a,sk = 0,0
     if fl & 0b11 == 0b11:
