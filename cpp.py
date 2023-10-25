@@ -84,6 +84,7 @@ def go(f):
         n = n.replace('operator%',"MOD")
         n = n.replace('operator|',"OR")
         n = n.replace('operator&',"AND")
+        n = n.replace('operator~','NOT')
 
         if idaapi.set_name(f.start_ea,n ,idaapi.SN_NOCHECK | idaapi.SN_FORCE):
             assert idaapi.set_func_cmt(f, 'demangled: '+fn+'\n'+'mangled: '+mn+'\n'+'simplified: '+org+'\n', 1) == True
