@@ -85,6 +85,7 @@ def go(f):
         n = n.replace('operator|',"OR")
         n = n.replace('operator&',"AND")
         n = n.replace('operator~','NOT')
+        n = n.replace('~','DESTRUCTOR_')
 
         if idaapi.set_name(f.start_ea,n ,idaapi.SN_NOCHECK | idaapi.SN_FORCE):
             assert idaapi.set_func_cmt(f, 'demangled: '+fn+'\n'+'mangled: '+mn+'\n'+'simplified: '+org+'\n', 1) == True
